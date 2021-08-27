@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 使用构造函数的形式创建
+        function Student(sname, sage) {
+            this.sname = sname;
+            this.sage = sage;
+            this.intr = function() {
+                console.log(`大家好！我叫：${this.sname},今年：${this.sage}岁了`);
+            }
+        }
+
+        // 调用构造函数
+        /*  1. new  创建一个新的空对象
+
+            2.
+            
+            3.  调用构造函数  new自动将构造函数中的this改为当前正在创建的空对象
+             a.每一句this.属性名=属性值 都会变成新对象的属性名=属性值
+             b.因为新对象中什么属性都没有,所以每一句新对象.属性名=属性值都是在给新对象做强行赋值;
+             c.如果构造函数中包含"this.方法名=function(){}"则每一次调用构造函数都会反复创建一个新函数,给新对象使用;
+
+            4. 返回新创建的对象地址保存到等号左边的变量中
+
+          */
+        var lilei = new Student("lilei", 11);
+        var hanmengwei = new Student("hanmengwei", 18);
+        var qimin = new Student("qimin", 21);
+        console.log(lilei);
+        console.log(hanmengwei);
+        console.log(qimin);
+        lilei.intr();
+        hanmengwei.intr();
+        qimin.intr();
+    </script>
+</body>
+
+</html>
